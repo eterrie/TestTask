@@ -25,11 +25,6 @@ namespace TestTask
         public int RoutePriority { get; set; }
         public Visit[] Visits { get; set; }
 
-        public static Route Max(Route route1, Route route2)
-        {
-            return route1.RoutePriority > route2.RoutePriority ? route1 : route2;
-        }
-
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();

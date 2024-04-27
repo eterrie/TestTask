@@ -34,20 +34,5 @@
         {
             return $"{PlaceName,-40}\t{VisitTime / 2.0, 4} ч.\t{Priority,4}";
         }
-
-        public static Visit GetMaxPriorityVisit(Visit visit1, Visit visit2)
-        {
-            if(visit1 == null)
-            {
-                return visit2;
-            }
-
-            if(visit2 == null)
-            {
-                return visit1;
-            }
-
-            return visit1.Priority > visit2.Priority ? visit1 : visit2; 
-        }
     }
 }
