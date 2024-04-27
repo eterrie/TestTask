@@ -7,7 +7,6 @@ namespace TestTask
         public Route()
         {
             Visits = new Visit[] {};
-            RoutePriority = 0;
         }
 
         public Route(Visit[] visits)

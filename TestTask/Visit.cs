@@ -2,12 +2,7 @@
 {
     public class Visit
     {
-        public Visit()
-        {
-            PlaceName = string.Empty;
-            Priority = 0;
-            VisitTime = 0;
-        }
+        public Visit() { }
 
         /// <summary>
         /// Конструктор для создания экземпляра посещения

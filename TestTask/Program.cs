@@ -1,4 +1,5 @@
 ﻿
+using System.Text.RegularExpressions;
 using TestTask;
 
 int maxVisitTime = 32;
@@ -28,4 +29,3 @@ Visit[] visits =
 
 Console.WriteLine(OptimalRouteCalculator.CalculateOptimalRouteDynamicMethod(maxVisitTime, visits));
 Console.WriteLine(OptimalRouteCalculator.CalculateOptimalRouteByGreedyAlgorithm(maxVisitTime, visits));
-
