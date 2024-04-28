@@ -1,6 +1,7 @@
 ﻿
-using System.Text.RegularExpressions;
+using System.Diagnostics;
 using TestTask;
+using TestTask.RouteProblem;
 
 int maxVisitTime = 32;
 
@@ -27,5 +28,25 @@ Visit[] visits =
     new Visit("Музей современного искусства Эрарта", 7, 16),
 };
 
-Console.WriteLine(OptimalRouteCalculator.CalculateOptimalRouteDynamicMethod(maxVisitTime, visits));
-Console.WriteLine(OptimalRouteCalculator.CalculateOptimalRouteByGreedyAlgorithm(maxVisitTime, visits));
+Route fullRoute = new Route(visits);
+
+Console.WriteLine($"Достопримечательности:\n{fullRoute}\n");
+
+var stopwatch = new Stopwatch();
+
+Console.WriteLine("Решение через цикл: ");
+
+stopwatch.Start();
+Route optimalRouteLoop = RouteProblemSolution.ComputeRoute(maxVisitTime, visits, false);
+stopwatch.Stop();
+
+Console.WriteLine($"{optimalRouteLoop}\nВремя вычисления: {stopwatch.Elapsed.TotalSeconds:F3} с.\n");
+
+
+Console.WriteLine("Решение через рекурсию: ");
+stopwatch.Reset();
+stopwatch.Start();
+Route optimalRouteRecursive = RouteProblemSolution.ComputeRoute(maxVisitTime, visits, false);
+stopwatch.Stop();
+
+Console.WriteLine($"{optimalRouteRecursive}\nВремя вычисления: {stopwatch.Elapsed.TotalSeconds:F3} с.");
